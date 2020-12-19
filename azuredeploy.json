@@ -29,10 +29,6 @@
       ],
       "defaultValue": "1"
     },
-    "Deploy App Insights": {
-      "type": "bool",
-      "defaultValue": false
-    },
     "Email Service": {
       "type": "string",
       "allowedValues": [
