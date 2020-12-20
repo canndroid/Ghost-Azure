@@ -82,7 +82,8 @@
       "dependsOn": [],
       "properties": {
         "name": "[parameters('hostingPlanName')]",
-        "numberOfWorkers": 1
+        "numberOfWorkers": 1,
+        "reserved": true
       }
     },
     {
