@@ -20,6 +20,13 @@
       ],
       "defaultValue": "Basic"
     },
+    "linuxFxVersion": {
+      "type": "string",
+      "defaultValue": "NODE|10-lts",
+      "metadata": {
+        "description": "The Runtime stack of current web app"
+      }
+    },
     "Worker Size": {
       "type": "string",
       "allowedValues": [
@@ -71,6 +78,7 @@
       "sku": {
         "name": "[variables('sku')]"
       },
+      "kind": "linux",
       "dependsOn": [],
       "properties": {
         "name": "[parameters('hostingPlanName')]",
@@ -91,7 +99,10 @@
       },
       "properties": {
         "name": "[parameters('siteName')]",
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]",
+        "siteConfig": {
+          "linuxFxVersion": "[parameters('linuxFxVersion')]"
+        },
       },
       "resources": [
         {
