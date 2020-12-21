@@ -57,11 +57,8 @@ if [[ ! -n "$KUDU_SYNC_CMD" ]]; then
   exitWithMessageOnError "npm failed"
 
   if [[ ! -n "$KUDU_SERVICE" ]]; then
-    # In case we are running locally this is the correct location of kuduSync
-    KUDU_SYNC_CMD=kuduSync
-  else
     # In case we are running on kudu service this is the correct location of kuduSync
-    KUDU_SYNC_CMD=$APPDATA/npm/node_modules/kuduSync/bin/kuduSync
+    KUDU_SYNC_CMD=/usr/local/lib/node_modules/kudusync/bin/kudusync
   fi
 fi
 
