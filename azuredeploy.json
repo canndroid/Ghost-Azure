@@ -22,7 +22,7 @@
     },
     "linuxFxVersion": {
       "type": "string",
-      "defaultValue": "NODE|10-lts",
+      "defaultValue": "NODE|12-lts",
       "metadata": {
         "description": "The Runtime stack of current web app"
       }
@@ -133,7 +133,7 @@
             "mail__options__auth__user": "[parameters('Email Username')]",
             "mail__options__auth__pass": "[parameters('Email Password')]",
             "mail__from": "[parameters('Email From Address')]",
-            "WEBSITE_NODE_DEFAULT_VERSION": "~10",
+            "WEBSITE_NODE_DEFAULT_VERSION": "~12",
             "NODE_ENV": "production"
           }
         },
