@@ -11,8 +11,6 @@
         },
         "siteLocation": {
             "type": "string",
-            "metadata": {
-                "description": "Location for all resources."
             }
         }
     },
@@ -31,7 +29,7 @@
             "apiVersion": "2020-06-01",
             "name": "[parameters('webAppName')]",
             "type": "Microsoft.Web/sites",
-            "location": "[parameters('location')]",
+            "location": "[parameters('siteLocation')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]"
             ],
@@ -49,7 +47,7 @@
             "apiVersion": "2020-06-01",
             "name": "[variables('hostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
-            "location": "[parameters('location')]",
+            "location": "[parameters('siteLocation')]",
             "kind": "linux",
             "sku": {
                 "Tier": "[variables('sku')]",
