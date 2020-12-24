@@ -9,7 +9,7 @@
                 "description": "That name is the name of our application. It has to be unique.Type a name followed by your resource group name. (<name>-<resourceGroupName>)"
             }
         },
-        "location": {
+        "siteLocation": {
             "type": "string",
             "metadata": {
                 "description": "Location for all resources."
