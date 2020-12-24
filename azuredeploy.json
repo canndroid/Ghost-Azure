@@ -10,7 +10,7 @@
             }
         },
         "siteLocation": {
-            "type": "string",
+            "type": "string"
             }
         }
     },
