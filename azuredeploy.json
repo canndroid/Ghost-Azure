@@ -14,7 +14,6 @@
         },
         "location": {
             "type": "string",
-            "defaultValue": "[parameters('siteLocation')]",
             "metadata": {
                 "description": "Location for all resources."
             }
