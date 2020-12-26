@@ -44,7 +44,7 @@
                 },
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
                 "clientAffinityEnabled": false,
-                "url": "[concat('https://', reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]",
+                "url": "[concat('https://', reference(resourceId('Microsoft.Web/sites', parameters('webAppName'))).hostNames[0])]",
                 "WEBSITE_NODE_DEFAULT_VERSION": "~10",
                 "NODE_ENV": "production"
             }
