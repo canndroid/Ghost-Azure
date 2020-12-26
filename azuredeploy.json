@@ -43,21 +43,10 @@
                     "alwaysOn": "[variables('alwaysOn')]"
                 },
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
-                "clientAffinityEnabled": false
-            }
-        },
-        {
-            "name": "appsettings",
-            "type": "config",
-            "apiVersion": "2018-11-01",
-            "dependsOn": [
-               "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
-           
-            ],
-            "properties": {
-              "url": "[concat('https://', reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]",
-              "WEBSITE_NODE_DEFAULT_VERSION": "~10",
-              "NODE_ENV": "production"
+                "clientAffinityEnabled": false,
+                "url": "[concat('https://', reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]",
+                "WEBSITE_NODE_DEFAULT_VERSION": "~10",
+                "NODE_ENV": "production"
             }
         },
         {
