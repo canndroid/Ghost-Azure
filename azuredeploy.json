@@ -18,7 +18,7 @@
         }
     },
     "variables": {
-        "alwaysOn": false,
+        "alwaysOn": true,
         "sku": "Basic",
         "skuCode": "B1",
         "workerSize": "1",
