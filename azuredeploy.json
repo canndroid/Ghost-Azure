@@ -24,7 +24,7 @@
         "workerSize": "1",
         "workerSizeId": "0",
         "numberOfWorkers": "1",
-        "linuxFxVersion": "NODE|14-lts",
+        "linuxFxVersion": "NODE|10-lts",
         "hostingPlanName": "[concat('hpn-', resourceGroup().name)]"
     },
    "resources": [
@@ -44,6 +44,20 @@
                 },
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
                 "clientAffinityEnabled": false
+            }
+        },
+        {
+            "name": "appsettings",
+            "type": "config",
+            "apiVersion": "2018-11-01",
+            "dependsOn": [
+               "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
+           
+            ],
+            "properties": {
+              "url": "[concat('https://', reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]",
+              "WEBSITE_NODE_DEFAULT_VERSION": "~10",
+              "NODE_ENV": "production"
             }
         },
         {
