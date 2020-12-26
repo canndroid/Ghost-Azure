@@ -10,7 +10,7 @@
 
 exitWithMessageOnError () {
   if [ ! $? -eq 0 ]; then
-    echo "An error has occurred during web site deployment."
+    echo "ERROR: exit 1: An error has occurred during web site deployment."
     echo $1
     exit 1
   fi
@@ -67,6 +67,12 @@ fi
 
 selectNodeVersion () {
   if [[ -n "$KUDU_SELECT_NODE_VERSION_CMD" ]]; then
+    echo "a here"
+    echo "KUDU_SELECT_NODE_VERSION_CMD $KUDU_SELECT_NODE_VERSION_CMD"
+    echo "DEPLOYMENT_SOURCE $DEPLOYMENT_SOURCE"
+    echo "DEPLOYMENT_TARGET $DEPLOYMENT_TARGET"
+    echo "DEPLOYMENT_TEMP $DEPLOYMENT_TEMP"
+    
     SELECT_NODE_VERSION="$KUDU_SELECT_NODE_VERSION_CMD \"$DEPLOYMENT_SOURCE\" \"$DEPLOYMENT_TARGET\" \"$DEPLOYMENT_TEMP\""
     eval $SELECT_NODE_VERSION
     exitWithMessageOnError "select node version failed"
@@ -87,6 +93,7 @@ selectNodeVersion () {
 
     NPM_CMD="\"$NODE_EXE\" \"$NPM_JS_PATH\""
   else
+    echo "b here"
     NPM_CMD=npm
     NODE_EXE=node
   fi
