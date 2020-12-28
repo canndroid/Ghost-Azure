@@ -44,7 +44,7 @@
                     "appSettings": [
                         {
                             "name": "WEBSITE_NODE_DEFAULT_VERSION",
-                            "value": "12"
+                            "value": "12-lts"
                         },
                         {
                             "name": "WEBSITE_NPM_DEFAULT_VERSION",
