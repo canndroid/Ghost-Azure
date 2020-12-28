@@ -44,7 +44,11 @@
                     "appSettings": [
                         {
                             "name": "WEBSITE_NODE_DEFAULT_VERSION",
-                            "value": "10.13"
+                            "value": "12"
+                        },
+                        {
+                            "name": "WEBSITE_NPM_DEFAULT_VERSION",
+                            "value": "6"
                         },
                         {
                             "name": "NODE_ENV",
