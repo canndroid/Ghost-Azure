@@ -40,24 +40,18 @@
                 "name": "[parameters('webAppName')]",
                 "siteConfig": {
                     "linuxFxVersion": "[variables('linuxFxVersion')]",
-                    "alwaysOn": "[variables('alwaysOn')]"
+                    "alwaysOn": "[variables('alwaysOn')]",
+                    "appSettings": [
+                        {
+                            "url": "[concat('https://', reference(resourceId('Microsoft.Web/sites', parameters('webAppName'))).hostNames[0])]",
+                            "WEBSITE_NODE_DEFAULT_VERSION": "10.13",
+                            "NODE_ENV": "production"
+                        }
+                    ]
                 },
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
                 "clientAffinityEnabled": false
             }
-        },
-        {
-          "name": "appsettings",
-          "type": "config",
-          "apiVersion": "2018-11-01",
-          "dependsOn": [
-            "[resourceId('Microsoft.Web/sites', parameters('webAppName'))]"
-          ],
-          "properties": {
-            "url": "[concat('https://', reference(resourceId('Microsoft.Web/sites', parameters('webAppName'))).hostNames[0])]",
-            "WEBSITE_NODE_DEFAULT_VERSION": "10.13",
-            "NODE_ENV": "production"
-          }
         },
         {
             "apiVersion": "2020-06-01",
