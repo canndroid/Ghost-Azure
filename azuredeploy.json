@@ -40,13 +40,7 @@
                 "name": "[parameters('webAppName')]",
                 "siteConfig": {
                     "linuxFxVersion": "[variables('linuxFxVersion')]",
-                    "alwaysOn": "[variables('alwaysOn')]",
-                    "appSettings": [
-                        {
-                            "WEBSITE_NODE_DEFAULT_VERSION": "10.13",
-                            "NODE_ENV": "production"
-                        }
-                    ]
+                    "alwaysOn": "[variables('alwaysOn')]"
                 },
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
                 "clientAffinityEnabled": false
