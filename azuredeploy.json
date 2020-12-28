@@ -43,10 +43,6 @@
                     "alwaysOn": "[variables('alwaysOn')]",
                     "appSettings": [
                         {
-                            "name": "url",
-                            "value": "[concat('https://', reference(resourceId('Microsoft.Web/sites', parameters('webAppName'))).hostNames[0])]"
-                        },
-                        {
                             "name": "WEBSITE_NODE_DEFAULT_VERSION",
                             "value": "10.13"
                         },
